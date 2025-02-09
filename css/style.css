@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;  /* tanto a borda quanto o padding
+    é contado como a área do elemento, nesse caso a borda não acrescenta externamente */
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    /* font family é quando passamos uma fonte específica
+    font-size é para dizer o tamanho de determina fonte*/
+}
+
+html, body {
+     background-color: #000;/* aqui forma o fundo da págin*/
+}
+
+.nav-container { /* classe  é sempre com .*/
+    height: 80px;
+    background-color: #ff8400;
+    width: 100%; /* para garantir que vai ocupar toda largura da janela*/
+    padding: 0 20px; /* padding para garantir um espaçamento nas laterais
+    0 no topo e embaixo e 20px nas laterais */
+    display: flex;
+    align-items: center; /* alinha vertical ao centro */
+}
+
+.nav-main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto; /* alinha ao centrp p textp */
+    display: flex; /* deixa um conteudo do lado do outro */
+    align-items: center; /* deixa o texto no centro verticalmente falando */
+    justify-content: space-between; /*deixa um espaço no meio entre os conteúdos */
+
+}
+
+.nav-main h1 {
+    color: #fff;
+    font-size: 36px;
+}
+
+.contact-link {
+    color: #fff;
+    cursor: pointer; /*para virar maozinha quando passa o mouse */
+}
+
+.form-container {
+    padding: 40px 20px;
+}
+
+.card-form {
+    background-color: #333;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* deixando o card no centro da página */
+    border-radius: 8px;
+    padding: 20px; /*espaçamento nos 4 cantos */
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-control label {
+    display: none;
+}
+
+.error-message {
+    margin-top: 5px;
+    color: #faa;
+}
+
+.form-input{
+    height: 50px;
+    width: 100%; /* para ocupar toda a largura disponível na caixa do 
+    formulário visto que o formulário ja tem um padind vai ter um espaçamento */
+    border-radius: 4px;
+    padding: 0 20px;
+    font-size: 14px;
+    border: 0px;
+  
+}
+
+.form-input::placeholder { /* :: usado para formatar o place holder */
+        color: #c9c9c9;
+
+}
+
+.form-input :disabled {
+    background-color: #ddd;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 250px;
+    height: 50px;
+    background-color: #ff8400;
+    border: 0px;
+    border-radius: 4px;
+    color: #fff; /* formatando o texto do botão*/
+    font-weight: 700; /* negrito da fonte */
+    font-size: 14px;
+}
+
+/* colocando margin para ter um espaço entre um botão e outro
+caso diminuir a janela */
+.btn-left {
+    margin-right: 10px;
+}
+
+.btn-right {
+    margin-left: 10px;
+} 
+
+.list-container{
+    width: 100;
+    padding: 0 20px; /* para dar um espaçamento nas lateirais
+    do navegador */
+    display: flex;
+    flex-direction: column; /* muda o eixo para vertical */
+    align-items: center; /* alinha ao centro */
+
+}
+
+.card-list-item {
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 20px; /* espaço vertical entre os conteúdos */
+    width: 100%; /* pega 100% da largura da tela mas tem um limite
+    caso a tela n seja pequena, seja muito grande vai pegar até 900px
+    com o limite abaixo*/
+    max-width: 900px; /* para n acompanhar o máximo da tela )*/
+    border-radius: 8px;
+    padding: 20px;
+
+}
+
+.card-list-item h3 {
+    color: #Ff8400;
+    font-size: 18px; /* toda h do html por padrão é negrito
+    não precisa colocar  o font-weight */
+    
+}
+
+.address-line {
+    color: #fff;
+    font-size: 14px;
+}
+
+.address-cep {
+    color: #8f8f8f;
+    font-size: 12px;
+}

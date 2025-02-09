@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <!-- Mudar lingugaem para br-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Via Cep</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="nav-container">
+      <nav class="nav-main">
+        <!-- barra de navegação-->
+        <h1>DS ViaCep</h1>
+        <div class="contact-link">contato</div>
+      </nav>
+    </header>
+    <main>
+      <section id="form-section" class="form-container">
+        <div class="card-form">
+          <form name="newAddress">
+            <div class="form-control">
+              <label for="cep">CEP:</label>
+              <!-- label é colocado mais por semantica (ELE APARECE
+           antes da caixa de texto (input))
+                ele não vai aparecer, esse for é nome que
+                vamos usar lá na entiddae do java script-->
+              <input
+                name="cep"
+                id="cep"
+                type="text"
+                class="form-input"
+                placeholder="CEP"
+              />
+              <!-- o name cep do seu id que bater com o for que está no label
+                 é uma boa prática, e o name é utilizado
+                 porque tem ferramenta javascript que usa o name para
+                 acessar um ipunt de um formulario e também é possível
+                 selecionar um input pelo nome dele -->
+                 <div class="error-message" data-error="cep" ></div>
+            </div>
+            <div class="form-control">
+              <label for="street">Logradouro:</label>
+              <input
+                name="street"
+                id="street"
+                class="form-input"
+                type="text"
+                placeholder="Logradouro"
+                disabled
+              /> <!-- disabled para dizer que esse input
+              está desabilitado porque o usuário não vai
+              conseguir digitar e a api
+              vai trazer essa informação com base no cep-->
+            </div>
+            <div class="form-control">
+              <label for="number">Número:</label>
+              <input
+                name="number"
+                id="number"
+                class="form-input"
+                type="text"
+                placeholder="Número"
+              />
+              <div class="error-message" data-error="number"></div>
+            </div>
+            <div class="form-control">
+              <label for="city">Cidade:</label>
+              <input
+                name="city"
+                id="city"
+                type="text"
+                class="form-input"
+                placeholder="Cidade"
+                disabled
+              />
+            </div> <!-- disabled para dizer que esse input
+            está desabilitado porque o usuário não vai
+            conseguir digitar e a api
+            vai trazer essa informação com base no cep-->
+            <div class="btn-container">
+              <button name="btnSave" class="btn btn-left" type="submit">Salvar</button>
+              <!-- submit porque o botão de salvar é oque vai
+             enviar nosso formulário-->
+              <button name="btnClear" class="btn btn-right">Limpar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section id="list-section" class="list-container">
+        <!-- os id segue o mesmo padrão
+            é bom ter essa organização-->
+        <div class="card-list-item">
+          <h3>São Paulo</h3>
+          <p class="address-line"> Rua dos Jardins, 720 </p>
+          <p class="address-cep">1231232-323</p>
+        </div>
+        <div class="card-list-item">
+            <h3>São Paulo</h3>
+            <p class="address-line"> Rua dos Jardins, 720 </p>
+            <p class="address-cep">1231232-323</p>
+            </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/js/viacep.js"></script>
+
+  </body>
+</html>
