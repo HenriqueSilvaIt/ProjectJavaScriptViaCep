@@ -5,6 +5,7 @@ import Address from '../models/address.js';
 import * as addressService from '../services/address-service.js';
 import RequestException from '../services/exceptions/request-exception.js';
 
+import  * as listController from './list-controller.js';
 
 /* função construtora que guarda referencias para os input botão e etc */
 
@@ -92,6 +93,8 @@ function clearForm() {
 
     state.inputCep.focus(); /* focus é uma função padrão que joga
     o cursor para o primeiro item da lista novamente para o usuário digitar */
+
+    state.address = new Address(); 
 }
 
 
@@ -129,9 +132,32 @@ async function handleInpuntCepChange(event) {
 
 /* Botão de salvar */
 
-async function handleBtnSaveClick(event) {
+ function handleBtnSaveClick(event) {
     event.preventDefault();
-    console.log(state.address);
+        /* lista controler chama  adiciona um novo card ao clicar no 
+    botão salvar o endereço */
+    
+    /* funçao abaixo vai gerar um objeto falando que tem que preencher o campo
+    number e cep, chama função get errors da classe addres-service */
+    const errors = addressService.getErrors(state.address);
+
+    const keys = Object.keys(errors); /* pegar quantidade de erros */
+
+    if (keys.length > 0) {
+
+        keys.forEach(key => {
+            setFormError(key, errors[key]) /* passando o atributo key no vetor de errors */
+        });
+
+       /* for (let i=0; i<keys.length; i++) {
+
+            setFormError(keys[i], errors[keys[i]]);
+        }*/
+    } else {
+
+    listController.addCard(state.address);
+    clearForm();
+    }
 }
 
 

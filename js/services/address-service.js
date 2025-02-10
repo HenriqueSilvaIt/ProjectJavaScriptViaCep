@@ -12,3 +12,17 @@ export async function findByCep(cep) {
 
     return address;
 }
+
+export function getErrors(address) {
+    const errors = {};
+
+    if (!address.cep || address.cep == "") { /* se for nulo  ! n ta defindo ou tiver vazio */
+        errors.cep = "Campo requerido";
+    }
+
+    if (!address.number || address.number == "") { /* se for nulo  ! n ta defindo ou tiver vazio */
+        errors.number = "Campo requerido";
+    }
+
+   return errors;
+}
