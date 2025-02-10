@@ -23,7 +23,7 @@ PC             |  Mobile
 :-------------------------:|:-------------------------:
 ![](https://github.com/HenriqueSilvaIt/Assets/blob/main/ViaCep%20-%20Java%20Script/c-%20listpng.png)  |  ![](https://github.com/HenriqueSilvaIt/Assets/blob/main/ViaCep%20-%20Java%20Script/m%20-%20lit.png)
 
-### Cenário de preenchimento incorreto.
+### Cenário de preenchimento incorreto
 
 PC             |  Mobile
 :-------------------------:|:-------------------------:
